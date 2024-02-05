@@ -1,0 +1,20 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto ">
+    <h1 class="display-4">Falling Sand</h1>
+    <p class="lead">This window shows a simulation of falling sand made with p5.js</p>
+  </div>
+
+<div id="canvas" class="lead">
+</div>
+<button (click)="reload()">Reload</button>
+<!--
+<input type="number" [ngModel]="pixelSize"/><button (click)="updatePixelSize()">Update pixel size</button>-->
+<form class="main-form">
+
+    <div class="form-group col-md-4">
+      <label for="pixelSize">Taille de grain</label>
+      <input type="text" class="form-control" id="pixelSize" name="pixelSize" [(ngModel)]="pixelSize">
+     <br>
+     <button type="submit" (click)="updatePixelSize(pixelSize)" class="btn btn-primary">Update grain</button>
+    </div>
+  
+  </form>
