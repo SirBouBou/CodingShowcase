@@ -1,22 +1,14 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import p5 from 'p5';
 
-interface P5Sketch extends p5 {
-  setup: () => void;
-  draw: () => void;
-  setPixelSize?: (newValue: number) => void;
-}
-
 @Component({
   selector: 'app-falling-sand-1',
-  standalone: true,
-  imports: [],
   templateUrl: './falling-sand-1.component.html',
   styleUrl: './falling-sand-1.component.css'
 })
 export class FallingSand1Component {
   @ViewChild('sketchContainer', { static: true }) sketchContainer!: ElementRef;
-  private p5!: P5Sketch; 
+  private p5!: p5; 
   private canvas: HTMLElement | null | undefined;
 
   pixelSize:number = 5;
@@ -26,14 +18,6 @@ export class FallingSand1Component {
     if(this.canvas != null) {
       this.p5 = new p5(this.sketch, this.canvas);      
     }
-  }
-
-  updatePixelSize(p:number) {
-    this.pixelSize = p;
-    if(this.p5.setPixelSize) {
-      console.log(this.pixelSize)
-      this.p5.setPixelSize(this.pixelSize);
-    }   
   }
 
   ngOnDestroy() {
@@ -50,16 +34,12 @@ export class FallingSand1Component {
   sketch(s:p5) { 
     const width = 600;
     const height = 600;
-    let pixelSize = 5;
     const rainSize = 15;
+    const pixelSize = 8;
     let grid: any[] = [];
     let rows: number;
     let cols: number;
     let color = 0;
-
-    (s as any).setPixelSize = (nb:number) => {
-      pixelSize = nb;
-    };
 
     function stillInCols(i:number) {
       return i >= 0 && i < cols;

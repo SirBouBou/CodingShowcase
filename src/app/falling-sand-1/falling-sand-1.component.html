@@ -8,13 +8,3 @@
 <button (click)="reload()">Reload</button>
 <!--
 <input type="number" [ngModel]="pixelSize"/><button (click)="updatePixelSize()">Update pixel size</button>-->
-<form class="main-form">
-
-    <div class="form-group col-md-4">
-      <label for="pixelSize">Taille de grain</label>
-      <input type="text" class="form-control" id="pixelSize" name="pixelSize" [(ngModel)]="pixelSize">
-     <br>
-     <button type="submit" (click)="updatePixelSize(pixelSize)" class="btn btn-primary">Update grain</button>
-    </div>
-  
-  </form>
