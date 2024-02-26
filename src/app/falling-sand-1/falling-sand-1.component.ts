@@ -32,10 +32,11 @@ export class FallingSand1Component {
   }
 
   sketch(s:p5) { 
+    //TODO : Add remove sand on right click
     const width = 600;
     const height = 600;
     const rainSize = 15;
-    const pixelSize = 8;
+    const pixelSize = 10;
     let grid: any[] = [];
     let rows: number;
     let cols: number;
@@ -126,7 +127,7 @@ export class FallingSand1Component {
             }
           }
         }
-        color += 0.2;
+        color += pixelSize/20;
         if(color > 360) {
           color = 0;
         }   
