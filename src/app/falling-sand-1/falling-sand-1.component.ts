@@ -40,7 +40,7 @@ export class FallingSand1Component {
     let grid: any[] = [];
     let rows: number;
     let cols: number;
-    let color = 0;
+    let color = 1;
 
     function stillInCols(i:number) {
       return i >= 0 && i < cols;
@@ -66,7 +66,7 @@ export class FallingSand1Component {
     }
 
     s.setup = () => {
-      s.createCanvas(height, width);
+      s.createCanvas(width, height);
       cols = Math.floor(width / pixelSize);
       rows = Math.floor(height / pixelSize);
       grid = make2DArray(rows, cols);
@@ -127,10 +127,11 @@ export class FallingSand1Component {
             }
           }
         }
+        /*
         color += pixelSize/20;
         if(color > 360) {
           color = 0;
-        }   
+        } */  
       }
     };
   }
