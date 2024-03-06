@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MyTetrisComponent } from './my-tetris/my-tetris.component';
+import { GamesComponent } from './games/games.component';
+import { ShowcasesComponent } from './showcases/showcases.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MyTetrisComponent } from './my-tetris/my-tetris.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    MyTetrisComponent
+    MyTetrisComponent,
+    GamesComponent,
+    ShowcasesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,19 @@
 .company {
     margin-right: auto!important;
 }
+
+header {
+    height: 10%
+}
+
+#dropdownMenuLink {
+    width:100%
+}
+#dropdownMenuLink>* {
+    height:100%
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}

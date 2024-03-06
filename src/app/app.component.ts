@@ -15,6 +15,9 @@ export class AppComponent {
   isLoggedIn = false;
   username?: string;
 
+  ICON_FOLDER = "../assets/AccountLogo/Icon"
+  iconPath: string = this.ICON_FOLDER + "0.png";
+
   eventBusSub?: Subscription;
 
   constructor(
@@ -30,6 +33,7 @@ export class AppComponent {
       const user = this.storageService.getUser();
       this.roles = user.roles;
       this.username = user.username;
+      this.iconPath = this.ICON_FOLDER + user.profile.iconId + ".png";
     }
 
     this.eventBusSub = this.eventBusService.on('logout', () => {
